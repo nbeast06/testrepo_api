@@ -17,7 +17,9 @@ def api_root():
 @app.route('/github', methods=['POST'])
 def api_gh_message():
     if request.headers['Content-Type'] == 'application/json':
-        return json.dumps(request.json)
+        my_info = json.dumps(request.json)
+        print(my_info)
+        return my_info
     
 if __name__ == '__main__':
     app.run(debug=False)
